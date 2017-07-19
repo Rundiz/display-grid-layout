@@ -1,0 +1,37 @@
+// mixins for display:grid; layout
+
+
+@mixin columns-end($size) {
+    @for $i from 1 through ($total-columns + 1) {
+        &.#{$size}-col-end-#{$i} {
+            grid-column-end: $i;
+        }
+    }
+}
+
+
+@mixin columns-start($size) {
+    @for $i from 1 through ($total-columns) {
+        &.#{$size}-col-start-#{$i} {
+            grid-column-start: $i;
+        }
+    }
+}
+
+
+@mixin rows-end($size) {
+    @for $i from 1 through ($total-rows + 1) {
+        &.#{$size}-row-end-#{$i} {
+            grid-row-end: $i;
+        }
+    }
+}
+
+
+@mixin rows-start($size) {
+    @for $i from 1 through ($total-rows) {
+        &.#{$size}-row-start-#{$i} {
+            grid-row-start: $i;
+        }
+    }
+}

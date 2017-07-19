@@ -1,0 +1,29 @@
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+
+.dgl-container {
+    margin-bottom: 1.250rem;
+}
+
+.dgl-container .column {
+    background-color: #d6eafc;
+    border: 1px solid #52A0E5;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.dgl-container .dgl-container {
+    margin-bottom: 0;
+}

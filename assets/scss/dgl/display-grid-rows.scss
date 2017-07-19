@@ -1,0 +1,66 @@
+/*!
+* display:grid; layout
+*
+* Please note that this file is depend on display-grid-columns.css file.
+*
+* @author Vee W.
+*/
+
+
+@import 'includes/_variables';
+@import 'includes/_mixins';
+
+
+// .dgl-container
+.dgl-container {
+    // .dgl-container.total-2-rows to .total-12-rows
+    @for $i from 2 through $total-rows {
+        &.total-#{$i}-rows {
+            grid-template-rows: repeat($i, 1fr);
+        }
+    }
+
+    // .dgl-container .column
+    .column {
+        // .dgl-container .column.row-end-1 to .row-end-13
+        @for $i from 1 through ($total-rows + 1) {
+            &.row-end-#{$i} {
+                grid-row-end: $i;
+            }
+        }
+
+        // .dgl-container .column.row-start-1 to .row-start-12
+        @for $i from 1 through ($total-rows) {
+            &.row-start-#{$i} {
+                grid-row-start: $i;
+            }
+        }
+
+        // start & end for screen sizes ------------------------------------------------------
+        @media (min-width: $sm-min-width) {
+            // .dgl-container .column.sm-row-end-1 to .sm-row-end-13
+            @include rows-end('sm');
+            // .dgl-container .column.sm-row-start-1 to .sm-row-start-12
+            @include rows-start('sm');
+        }
+        @media (min-width: $md-min-width) {
+            // .dgl-container .column.md-row-end-1 to .md-row-end-13
+            @include rows-end('md');
+            // .dgl-container .column.md-row-start-1 to .md-row-start-12
+            @include rows-start('md');
+        }
+        @media (min-width: $lg-min-width) {
+            // .dgl-container .column.lg-row-end-1 to .lg-row-end-13
+            @include rows-end('lg');
+            // .dgl-container .column.lg-row-start-1 to .lg-row-start-12
+            @include rows-start('lg');
+        }
+        @media (min-width: $xl-min-width) {
+            // .dgl-container .column.xl-row-end-1 to .xl-row-end-13
+            @include rows-end('xl');
+            // .dgl-container .column.xl-row-start-1 to .xl-row-start-12
+            @include rows-start('xl');
+        }
+        // the end of start & end for screen sizes ------------------------------------------
+    }
+}

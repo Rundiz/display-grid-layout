@@ -1,0 +1,92 @@
+/*!
+* display:grid; layout
+*
+* @author Vee W.
+*/
+
+
+@import 'includes/_variables';
+@import 'includes/_mixins';
+
+
+// .dgl-container
+.dgl-container {
+    display: grid;
+    grid-template-columns: repeat($total-columns, 1fr);
+    margin: 0 auto;
+    max-width: 90%;
+
+    @media (min-width: ($xl-min-width + 40)) {
+        // .dgl-container
+        max-width: $xl-min-width;
+    }
+
+    // .dgl-container.total-1-columns to .total-11-columns
+    @for $i from 1 through ($total-columns - 1) {
+        &.total-#{$i}-columns {
+            grid-template-columns: repeat($i, 1fr);
+        }
+    }
+
+    // .dgl-container.full-width
+    &.full-width {
+        max-width: none;
+    }
+
+    // .dgl-container.has-column-gap
+    &.has-column-gap {
+        grid-column-gap: $column-gap;
+    }
+
+    // .dgl-container .column
+    .column {
+        min-width: 0;
+
+        // .dgl-container .column.col-end-1 to .col-end-13
+        @for $i from 1 through ($total-columns + 1) {
+            &.col-end-#{$i} {
+                grid-column-end: $i;
+            }
+        }
+
+        // .dgl-container .column.col-start-1 to .col-start-12
+        @for $i from 1 through ($total-columns) {
+            &.col-start-#{$i} {
+                grid-column-start: $i;
+            }
+        }
+
+        // start & end for screen sizes ------------------------------------------------------
+        @media (min-width: $sm-min-width) {
+            // .dgl-container .column.sm-col-end-1 to .sm-col-end-13
+            @include columns-end('sm');
+            // .dgl-container .column.sm-col-start-1 to .sm-col-start-12
+            @include columns-start('sm');
+        }
+        @media (min-width: $md-min-width) {
+            // .dgl-container .column.md-col-end-1 to .md-col-end-13
+            @include columns-end('md');
+            // .dgl-container .column.md-col-start-1 to .md-col-start-12
+            @include columns-start('md');
+        }
+        @media (min-width: $lg-min-width) {
+            // .dgl-container .column.lg-col-end-1 to .lg-col-end-13
+            @include columns-end('lg');
+            // .dgl-container .column.lg-col-start-1 to .lg-col-start-12
+            @include columns-start('lg');
+        }
+        @media (min-width: $xl-min-width) {
+            // .dgl-container .column.xl-col-end-1 to .xl-col-end-13
+            @include columns-end('xl');
+            // .dgl-container .column.xl-col-start-1 to .xl-col-start-12
+            @include columns-start('xl');
+        }
+        // the end of start & end for screen sizes ------------------------------------------
+    }
+
+    // nested grid.
+    // .dgl-container .dgl-container
+    .dgl-container {
+        max-width: none;
+    }
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Display:grid; layout</title>
+        <link rel="stylesheet" href="assets/css/sanitize.css?v=1499761596">
+        <link rel="stylesheet" href="assets/css/typo-and-form.min.css?v=1500280244">
+        <link rel="stylesheet" href="assets/css/dgl/display-grid-columns.css?v=1500452872">
+        <link rel="stylesheet" href="assets/css/demo-styles.css?v=1500457472"> 
+    </head>
+    <body ontouchstart="">
+        <h1>Display:grid; layout</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Grid columns</a></li>
+                <li><a href="columns-rows.html">Grid columns &amp; rows</a></li>
+                <li><a href="https://github.com/Rundiz/display-grid-layout" target="forkmeongithub">Fork me on Github</a></li>
+            </ul>
+        </nav> 
+        <hr>
+        <h2>Basic</h2>
+        <p>
+            <abbr title="Display:grid; layout">DGL</abbr> basically based on 12 columns. 
+            The container class is <code>dgl-container</code> and each column class is <code>column</code>.
+        </p>
+        <div class="dgl-container">
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+        </div>
+        <h2>Custom total columns</h2>
+        <p>
+            You can set total columns from 1 to 11 and the column size will be change dynamically. 
+            Add <code>total-<i>n</i>-columns</code> where <var>n</var> is number. 
+            Example: <code>total-2-columns</code>
+        </p>
+        <div class="dgl-container total-2-columns">
+            <div class="column">column</div>
+            <div class="column">column</div>
+        </div>
+        <h2>Full width</h2>
+        <p>To make container full width, add <code>full-width</code> class to the container.</p>
+        <div class="dgl-container full-width">
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+            <div class="column">column</div>
+        </div>
+        <h2>Has column gap</h2>
+        <p>
+            By default the grid columns has no gap. 
+            If you want gap between columns, add <code>has-column-gap</code> class to the container.
+        </p>
+        <p>This example show empty column because if contain any text then it will be overflow width on small screen.</p>
+        <div class="dgl-container has-column-gap">
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+            <div class="column">&nbsp;</div>
+        </div>
+        
+        <hr>
+
+        <h2>Basic column sizes</h2>
+        <p>
+            This example will show you about how to use column size on basic container (12 columns by default). 
+            The number of <code>col-start-<i>n</i></code> and <code>col-end-<i>n</i></code> class is grid line (where <var>n</var> is number). 
+            Total 12 columns means total 13 grid lines.
+        </p>
+        <p>Add <code>col-start-<i>n</i></code> and <code>col-end-<i>n</i></code> class to the <code>column</code> class.</p>
+        
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-13">col-start-2 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-3">col-start-1 col-end-3</div>
+            <div class="column col-start-3 col-end-13">col-start-3 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-4">col-start-1 col-end-4</div>
+            <div class="column col-start-4 col-end-13">col-start-4 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-5">col-start-1 col-end-5</div>
+            <div class="column col-start-5 col-end-13">col-start-5 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-6">col-start-1 col-end-6</div>
+            <div class="column col-start-6 col-end-13">col-start-6 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-7">col-start-1 col-end-7</div>
+            <div class="column col-start-7 col-end-13">col-start-7 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-8">col-start-1 col-end-8</div>
+            <div class="column col-start-8 col-end-13">col-start-8 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-9">col-start-1 col-end-9</div>
+            <div class="column col-start-9 col-end-13">col-start-9 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-10">col-start-1 col-end-10</div>
+            <div class="column col-start-10 col-end-13">col-start-10 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-11">col-start-1 col-end-11</div>
+            <div class="column col-start-11 col-end-13">col-start-11 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-12">col-start-1 col-end-12</div>
+            <div class="column col-start-12 col-end-13">col-start-12 col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13">col-start-1 col-end-13</div>
+        </div>
+ 
+        <h3>Offset</h3>
+        <p>To use offset or push is easy, you just count on grid line you want and set the <code>col-start-<i>n</i></code> and <code>col-end-<i>n</i></code> class (where <var>n</var> is number).</p>
+        <div class="dgl-container">
+            <div class="column col-start-2 col-end-4">col-start-2 col-end-4</div>
+            <div class="column col-start-5 col-end-7">col-start-5 col-end-7</div>
+        </div>
+        <h3>Responsive</h3>
+        <p>
+            From the example above, the class name <code>col-start-<i>n</i></code> and <code>col-end-<i>n</i></code> are start working on extra small screen or larger. 
+            To set different column sizeand offset on differenct screen size  use <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> prefix.
+        </p>
+        <p>Example: <code>col-start-1 col-end-6 md-col-start-1 md-col-end-3</code>. Resize your web browser to see the example below in action.</p>
+        
+        <h4>SM</h4>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-2">col-start-1 col-end-13 sm-col-start-1 sm-col-end-2</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-2 sm-col-end-13">col-start-1 col-end-13 sm-col-start-2 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-3">col-start-1 col-end-13 sm-col-start-1 sm-col-end-3</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-3 sm-col-end-13">col-start-1 col-end-13 sm-col-start-3 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-4">col-start-1 col-end-13 sm-col-start-1 sm-col-end-4</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-4 sm-col-end-13">col-start-1 col-end-13 sm-col-start-4 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-5">col-start-1 col-end-13 sm-col-start-1 sm-col-end-5</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-5 sm-col-end-13">col-start-1 col-end-13 sm-col-start-5 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-6">col-start-1 col-end-13 sm-col-start-1 sm-col-end-6</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-6 sm-col-end-13">col-start-1 col-end-13 sm-col-start-6 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-7">col-start-1 col-end-13 sm-col-start-1 sm-col-end-7</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-7 sm-col-end-13">col-start-1 col-end-13 sm-col-start-7 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-8">col-start-1 col-end-13 sm-col-start-1 sm-col-end-8</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-8 sm-col-end-13">col-start-1 col-end-13 sm-col-start-8 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-9">col-start-1 col-end-13 sm-col-start-1 sm-col-end-9</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-9 sm-col-end-13">col-start-1 col-end-13 sm-col-start-9 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-10">col-start-1 col-end-13 sm-col-start-1 sm-col-end-10</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-10 sm-col-end-13">col-start-1 col-end-13 sm-col-start-10 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-11">col-start-1 col-end-13 sm-col-start-1 sm-col-end-11</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-11 sm-col-end-13">col-start-1 col-end-13 sm-col-start-11 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-12">col-start-1 col-end-13 sm-col-start-1 sm-col-end-12</div>
+            <div class="column col-start-1 col-end-13 sm-col-start-12 sm-col-end-13">col-start-1 col-end-13 sm-col-start-12 sm-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 sm-col-start-1 sm-col-end-13">col-start-1 col-end-13 sm-col-start-1 sm-col-end-13</div>
+        </div>
+        <h4>MD</h4>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-2">col-start-1 col-end-13 md-col-start-1 md-col-end-2</div>
+            <div class="column col-start-1 col-end-13 md-col-start-2 md-col-end-13">col-start-1 col-end-13 md-col-start-2 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-3">col-start-1 col-end-13 md-col-start-1 md-col-end-3</div>
+            <div class="column col-start-1 col-end-13 md-col-start-3 md-col-end-13">col-start-1 col-end-13 md-col-start-3 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-4">col-start-1 col-end-13 md-col-start-1 md-col-end-4</div>
+            <div class="column col-start-1 col-end-13 md-col-start-4 md-col-end-13">col-start-1 col-end-13 md-col-start-4 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-5">col-start-1 col-end-13 md-col-start-1 md-col-end-5</div>
+            <div class="column col-start-1 col-end-13 md-col-start-5 md-col-end-13">col-start-1 col-end-13 md-col-start-5 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-6">col-start-1 col-end-13 md-col-start-1 md-col-end-6</div>
+            <div class="column col-start-1 col-end-13 md-col-start-6 md-col-end-13">col-start-1 col-end-13 md-col-start-6 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-7">col-start-1 col-end-13 md-col-start-1 md-col-end-7</div>
+            <div class="column col-start-1 col-end-13 md-col-start-7 md-col-end-13">col-start-1 col-end-13 md-col-start-7 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-8">col-start-1 col-end-13 md-col-start-1 md-col-end-8</div>
+            <div class="column col-start-1 col-end-13 md-col-start-8 md-col-end-13">col-start-1 col-end-13 md-col-start-8 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-9">col-start-1 col-end-13 md-col-start-1 md-col-end-9</div>
+            <div class="column col-start-1 col-end-13 md-col-start-9 md-col-end-13">col-start-1 col-end-13 md-col-start-9 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-10">col-start-1 col-end-13 md-col-start-1 md-col-end-10</div>
+            <div class="column col-start-1 col-end-13 md-col-start-10 md-col-end-13">col-start-1 col-end-13 md-col-start-10 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-11">col-start-1 col-end-13 md-col-start-1 md-col-end-11</div>
+            <div class="column col-start-1 col-end-13 md-col-start-11 md-col-end-13">col-start-1 col-end-13 md-col-start-11 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-12">col-start-1 col-end-13 md-col-start-1 md-col-end-12</div>
+            <div class="column col-start-1 col-end-13 md-col-start-12 md-col-end-13">col-start-1 col-end-13 md-col-start-12 md-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 md-col-start-1 md-col-end-13">col-start-1 col-end-13 md-col-start-1 md-col-end-13</div>
+        </div>
+        <h4>LG</h4>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-2">col-start-1 col-end-13 lg-col-start-1 lg-col-end-2</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-2 lg-col-end-13">col-start-1 col-end-13 lg-col-start-2 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-3">col-start-1 col-end-13 lg-col-start-1 lg-col-end-3</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-3 lg-col-end-13">col-start-1 col-end-13 lg-col-start-3 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-4">col-start-1 col-end-13 lg-col-start-1 lg-col-end-4</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-4 lg-col-end-13">col-start-1 col-end-13 lg-col-start-4 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-5">col-start-1 col-end-13 lg-col-start-1 lg-col-end-5</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-5 lg-col-end-13">col-start-1 col-end-13 lg-col-start-5 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-6">col-start-1 col-end-13 lg-col-start-1 lg-col-end-6</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-6 lg-col-end-13">col-start-1 col-end-13 lg-col-start-6 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-7">col-start-1 col-end-13 lg-col-start-1 lg-col-end-7</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-7 lg-col-end-13">col-start-1 col-end-13 lg-col-start-7 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-8">col-start-1 col-end-13 lg-col-start-1 lg-col-end-8</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-8 lg-col-end-13">col-start-1 col-end-13 lg-col-start-8 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-9">col-start-1 col-end-13 lg-col-start-1 lg-col-end-9</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-9 lg-col-end-13">col-start-1 col-end-13 lg-col-start-9 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-10">col-start-1 col-end-13 lg-col-start-1 lg-col-end-10</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-10 lg-col-end-13">col-start-1 col-end-13 lg-col-start-10 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-11">col-start-1 col-end-13 lg-col-start-1 lg-col-end-11</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-11 lg-col-end-13">col-start-1 col-end-13 lg-col-start-11 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-12">col-start-1 col-end-13 lg-col-start-1 lg-col-end-12</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-12 lg-col-end-13">col-start-1 col-end-13 lg-col-start-12 lg-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 lg-col-start-1 lg-col-end-13">col-start-1 col-end-13 lg-col-start-1 lg-col-end-13</div>
+        </div>
+        <h4>XL</h4>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-2">col-start-1 col-end-13 xl-col-start-1 xl-col-end-2</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-2 xl-col-end-13">col-start-1 col-end-13 xl-col-start-2 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-3">col-start-1 col-end-13 xl-col-start-1 xl-col-end-3</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-3 xl-col-end-13">col-start-1 col-end-13 xl-col-start-3 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-4">col-start-1 col-end-13 xl-col-start-1 xl-col-end-4</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-4 xl-col-end-13">col-start-1 col-end-13 xl-col-start-4 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-5">col-start-1 col-end-13 xl-col-start-1 xl-col-end-5</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-5 xl-col-end-13">col-start-1 col-end-13 xl-col-start-5 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-6">col-start-1 col-end-13 xl-col-start-1 xl-col-end-6</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-6 xl-col-end-13">col-start-1 col-end-13 xl-col-start-6 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-7">col-start-1 col-end-13 xl-col-start-1 xl-col-end-7</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-7 xl-col-end-13">col-start-1 col-end-13 xl-col-start-7 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-8">col-start-1 col-end-13 xl-col-start-1 xl-col-end-8</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-8 xl-col-end-13">col-start-1 col-end-13 xl-col-start-8 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-9">col-start-1 col-end-13 xl-col-start-1 xl-col-end-9</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-9 xl-col-end-13">col-start-1 col-end-13 xl-col-start-9 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-10">col-start-1 col-end-13 xl-col-start-1 xl-col-end-10</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-10 xl-col-end-13">col-start-1 col-end-13 xl-col-start-10 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-11">col-start-1 col-end-13 xl-col-start-1 xl-col-end-11</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-11 xl-col-end-13">col-start-1 col-end-13 xl-col-start-11 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-12">col-start-1 col-end-13 xl-col-start-1 xl-col-end-12</div>
+            <div class="column col-start-1 col-end-13 xl-col-start-12 xl-col-end-13">col-start-1 col-end-13 xl-col-start-12 xl-col-end-13</div>
+        </div>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-13 xl-col-start-1 xl-col-end-13">col-start-1 col-end-13 xl-col-start-1 xl-col-end-13</div>
+        </div>
+ 
+        <h4>Mixed</h4>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-7 lg-col-start-2 lg-col-end-5 xl-col-start-1 xl-col-end-5">col-start-1 col-end-7 lg-col-start-2 lg-col-end-5 xl-col-start-1 xl-col-end-5</div>
+            <div class="column col-start-7 col-end-13 lg-col-start-6 lg-col-end-8 xl-col-start-5 xl-col-end-9">col-start-7 col-end-13 lg-col-start-6 lg-col-end-8 xl-col-start-5 xl-col-end-9</div>
+            <div class="column col-start-1 col-end-13 lg-col-start-9 lg-col-end-12 xl-col-start-9 xl-col-end-13">col-start-1 col-end-13 lg-col-start-9 lg-col-end-12 xl-col-start-9 xl-col-end-13</div>
+        </div>
+
+        <hr>
+
+        <h2>Custom column sizes</h2>
+        <p>
+            Based on custom total columns, this can also set the column size.  
+            The number of <code>col-start-<i>n</i></code> and <code>col-end-<i>n</i></code> class is grid line (where <var>n</var> is number). 
+            For example: total 3 columns means total 4 grid lines.
+        </p>
+        
+        <h3>Total 3 columns</h3>
+        <div class="dgl-container total-3-columns">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-4">col-start-2 col-end-4</div>
+        </div>
+        <h3>Total 5 columns</h3>
+        <div class="dgl-container total-5-columns">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-3">col-start-2 col-end-3</div>
+            <div class="column col-start-3 col-end-4">col-start-3 col-end-4</div>
+            <div class="column col-start-4 col-end-6">col-start-4 col-end-6</div>
+        </div>
+        <h3>Total 7 columns</h3>
+        <div class="dgl-container total-7-columns">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-3">col-start-2 col-end-3</div>
+            <div class="column col-start-3 col-end-4">col-start-3 col-end-4</div>
+            <div class="column col-start-4 col-end-5">col-start-4 col-end-5</div>
+            <div class="column col-start-5 col-end-6">col-start-5 col-end-6</div>
+            <div class="column col-start-6 col-end-8">col-start-6 col-end-8</div>
+        </div>
+        <h3>Total 9 columns</h3>
+        <div class="dgl-container total-9-columns">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-3">col-start-2 col-end-3</div>
+            <div class="column col-start-3 col-end-4">col-start-3 col-end-4</div>
+            <div class="column col-start-4 col-end-5">col-start-4 col-end-5</div>
+            <div class="column col-start-5 col-end-6">col-start-5 col-end-6</div>
+            <div class="column col-start-6 col-end-7">col-start-6 col-end-7</div>
+            <div class="column col-start-7 col-end-8">col-start-7 col-end-8</div>
+            <div class="column col-start-8 col-end-10">col-start-8 col-end-10</div>
+        </div>
+        <h3>Total 11 columns</h3>
+        <div class="dgl-container total-11-columns">
+            <div class="column col-start-1 col-end-2">col-start-1 col-end-2</div>
+            <div class="column col-start-2 col-end-3">col-start-2 col-end-3</div>
+            <div class="column col-start-3 col-end-4">col-start-3 col-end-4</div>
+            <div class="column col-start-4 col-end-5">col-start-4 col-end-5</div>
+            <div class="column col-start-5 col-end-6">col-start-5 col-end-6</div>
+            <div class="column col-start-6 col-end-7">col-start-6 col-end-7</div>
+            <div class="column col-start-7 col-end-8">col-start-7 col-end-8</div>
+            <div class="column col-start-8 col-end-9">col-start-8 col-end-9</div>
+            <div class="column col-start-9 col-end-10">col-start-9 col-end-10</div>
+            <div class="column col-start-10 col-end-12">col-start-10 col-end-12</div>
+        </div>
+ 
+
+        <hr>
+
+        <h2>Nested grid</h2>
+        <p>The column grid can be nested, just put <code>dgl-container</code> class inside the column.</p>
+        <div class="dgl-container">
+            <div class="column col-start-1 col-end-7">A</div>
+            <div class="column col-start-7 col-end-13">
+                B
+                <div class="dgl-container">
+                    <div class="column col-start-1 col-end-6">B1</div>
+                    <div class="column col-start-6 col-end-13">B2</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
