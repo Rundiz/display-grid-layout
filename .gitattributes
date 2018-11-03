@@ -1,0 +1,7 @@
+# Disable LF normalization for all files
+* -text
+
+# Export ignore folders, files.
+_builder export-ignore
+_original-source-php export-ignore
+.gitattributes export-ignore
